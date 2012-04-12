@@ -20,7 +20,7 @@ namespace Arrays
             {
                 Console.WriteLine(salasDaFase[i]);
             }
-            
+
             int[] sequenciaFibbonaci = { 1, 1, 2, 3, 5, 8, 11, 19 };
 
             int[] sequenciaMaluca = { 5, 3, 0, -1, 10, 30, 25 };
@@ -61,7 +61,7 @@ namespace Arrays
 
             string segundaStr = "Segunda";
 
-            DiasDaSemana segunda = 
+            DiasDaSemana segunda =
                 (DiasDaSemana)Enum.Parse(typeof(DiasDaSemana), segundaStr);
 
             String vinteStr = "20";
@@ -82,16 +82,35 @@ namespace Arrays
             int idade = int.Parse(Console.ReadLine());
             Console.WriteLine(idade);
 
-            String corDaPorta = "Vermelha";
-            float larguraDaPorta = 1.0f;
-            float alturaDaPorta = 2.5f;
-            bool temJanelaNaPorta = true;
+            int[] vetor1 = { 1, 2, 3, 4, 5 };
+            int[] vetor2 = new int[5];
+
+            for (int i = 0; i < vetor1.Length; i++)
+            {
+                vetor2[i] = vetor1[i];
+            }
+
+            int[,] matrix = new int[5, 5];
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = 0; j < 5; j++)
+                {
+                    matrix[i, j] = i + j;
+                }
+            }
+
+            int soma = 0;
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = 0; j < 5; j++)
+                {
+                    soma += matrix[j, i];
+                }
+            }
 
             Console.ReadKey();
         }
     }
-
-    
 
     /// <summary>
     /// Esse enum serve para identificar os dias semana
