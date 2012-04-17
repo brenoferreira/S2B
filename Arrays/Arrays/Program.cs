@@ -108,6 +108,21 @@ namespace Arrays
                 }
             }
 
+            int[][] arrayArray = new int[5][];
+            for (int i = 0; i < 5; i++)
+            {
+                arrayArray[i] = new int[]{1, 2, 3, 4, 5};
+            }
+
+            int somaArrayArray = 0;
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = 0; j < 5; j++)
+                {
+                    somaArrayArray += arrayArray[j][i];
+                }
+            }
+
             Console.ReadKey();
         }
     }

@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Formulario";
+}
+<h2>
+    Formulario</h2>
+<form action="/home/formulario" method="POST">
+<fieldset>
+    <legend>Formulario de Cadastro</legend>
+    <div>
+        <label>
+            Nome:</label>
+        <input name="Nome" type="text" />
+    </div>
+    <div>
+        <label>
+            Idade:</label>
+        <input name="Idade" type="text" />
+    </div>
+    <div>
+        <label>
+            Sexo:</label>
+        <input type="radio" name="Sexo" value="masculino">Masculino</input>
+        <input type="radio" name="Sexo" value="feminino">Feminino</input>
+    </div>
+    <div>
+        <label>
+            Voce aceita receber nossa newsletter:</label>
+        <input type="checkbox" name="Newsletter" value="email">Email</input>
+        <input type="checkbox" name="Newsletter" value="SMS">SMS</input>
+        <input type="checkbox" name="Newsletter" value="telefone">Telefone</input>
+    </div>
+
+    <input type="submit" value="Enviar" />
+</fieldset>
+</form>
