@@ -1,0 +1,24 @@
+﻿@model List<AulaWeb2.Models.Produto>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<a href="/Produtos/Novo">Cadastrar novo produto</a>
+
+<table>
+    <tr>
+        <th>Nome</th>
+        <th>Preco</th>
+    </tr>
+
+    @foreach (AulaWeb2.Models.Produto produto in Model)
+    { 
+        <tr>
+            <td>@produto.Nome</td>
+            <td>R$@produto.Preco</td>
+        </tr>
+    }
+</table>

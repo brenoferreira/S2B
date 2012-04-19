@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Novo";
+}
+
+<h2>Novo</h2>
+
+<form action="/Produtos/Novo" method="post">
+    
+    <div>
+        <label>Nome:</label>
+        <input type="text" name="Nome" />
+    </div>
+
+    <div>
+        <label>Preço:</label>
+        <input type="text" name="Preco" />
+    </div>
+
+    <input type="submit" value="Cadastrar" />
+</form>

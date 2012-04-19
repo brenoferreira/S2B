@@ -1,0 +1,87 @@
+﻿@{
+    ViewBag.Title = "Scripts";
+}
+
+<div id="conteudo">
+
+</div>
+
+<script type="text/javascript">
+
+    alert("Hello world!");
+
+    var nome = "Breno";
+
+    alert(nome);
+
+    nome = 10 + 10;
+
+    alert(nome);
+
+    var vetor = [];
+    vetor.push(1);
+    vetor.push(2);
+    vetor.push(3);
+    //vetor.push("Hello");
+
+    var vetorComElementos = [1, 2, 3, 4, 5];
+    vetorComElementos.push(6);
+
+    for (var i = 0; i < vetorComElementos.length; i++) {
+        alert(vetorComElementos[i]);
+    }
+
+    function DizerOla(nome, idade) {
+        alert('Seu nome é: ' + nome + '. Sua idade: ' + idade);
+    }
+
+    DizerOla('Breno', 22);
+
+    var pessoa = {
+        Nome: 'Joaozinho',
+        Idade: 100,
+        Email: 'joao@ctallen.com.br'
+    };
+
+    alert(pessoa.Nome);
+    alert(pessoa.Idade);
+    alert(pessoa.Email);
+
+    function Pessoa() {
+        this.Nome = "";
+        this.Idade = 0;
+        this.Email = "";
+
+        this.CelebrarAniversario = function () {
+            alert('Parabéns!');
+        }
+    }
+
+    var p = new Pessoa();
+
+    p.Nome = 'maria';
+    p.Idade = 30;
+
+    alert(p);
+    p.CelebrarAniversario();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
