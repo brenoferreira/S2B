@@ -1,0 +1,96 @@
+﻿@{
+    ViewBag.Title = "Cadastro";
+}
+
+<h2>Cadastro</h2>
+
+<form>
+
+    <div>
+        <label>Username:</label>
+        <input id="usernameTxt" type="text" name="Username" />
+        <label id="resultadoVerificacao"></label>
+    </div>
+
+    <div>
+        <label>Senha:</label>
+        <input id="senhaTxt" type="password" name="Senha" />
+        <label id="forcaSenha"></label>
+    </div>
+
+    <button id="ok" value="Cadastrar">Cadastrar</button>
+</form>
+
+
+<script type="text/javascript">
+
+    $('#ok').click(function (e) {
+        var usernameDigitado = $('#usernameTxt').val();
+        var senhaDigitado = $('#senhaTxt').val();
+
+        $.post('/Usuario/Cadastro',
+               {
+                   UserName: usernameDigitado,
+                   Senha: senhaDigitado
+               },
+               function (resultado) {
+                   if (resultado == 'OK')
+                       alert('Cadastrado');
+                   else
+                       alert('Erro');
+               });
+        e.preventDefault();
+    });
+
+
+    $('#usernameTxt').blur(function () {
+        //validar o usuario;
+        //this é uma referencia para o objeto usernameTxt
+        //funcao val, retorna o valor digitado no input
+        var username = $(this).val();
+
+        $.get('/Usuario/VerificaUsuario?username=' + username,
+              function (resultado) {
+                  if (resultado == 'True')
+                      $('#resultadoVerificacao').text('Usuario já cadastrado');
+                  else if (resultado == 'False')
+                      $('#resultadoVerificacao').text('Usuario disponivel');
+              });
+    });
+
+    $('#senhaTxt').keyup(function () {
+        var senha = $(this).val();
+        //se a senha for menor 4 ou menos caracteres = fraca
+        //se a senha for entre 5 e 6 caracteres = media
+        //caso contrario = forte
+
+        if (senha.length <= 4) {
+            $('#forcaSenha').text('Senha fraca');
+            $('#forcaSenha').css('color', '#ff0000');
+            $('#forcaSenha').css('font-size', '30px');
+        }
+        else if (senha.length > 4 && senha.length <= 6) {
+            $('#forcaSenha').text('Senha media');
+            $('#forcaSenha').css('color', '#aaaa00');
+            $('#forcaSenha').css('font-size', '25px');
+        }
+        else {
+            $('#forcaSenha').text('Senha forte');
+            $('#forcaSenha').css('color', '#00ff00');
+            $('#forcaSenha').css('font-size', '15px');
+        }
+    });
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
